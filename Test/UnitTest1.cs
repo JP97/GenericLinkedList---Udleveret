@@ -262,9 +262,9 @@ namespace Test
 			list.Insert(55);  // 55
 			list.Insert(78);  // 78, 55
 			list.Insert(23);  // 23, 78, 55
-			//list.Insert(88);  // 88, 23, 78, 55
-			//list.Insert(62);  // 62, 88, 23, 78, 55
-			//list.Insert(49);  // 49, 62, 88, 23, 78, 55
+			list.Insert(88);  // 88, 23, 78, 55
+			list.Insert(62);  // 62, 88, 23, 78, 55
+			list.Insert(49);  // 49, 62, 88, 23, 78, 55
 
 			list.Sort();
 

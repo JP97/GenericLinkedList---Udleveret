@@ -27,6 +27,15 @@ public class ClubMember : IComparable
 		}
 
 	}
+	public class SortClubMembersAfterLastName : IComparer<ClubMember>
+	{
+		public int Compare(ClubMember first, ClubMember second)
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+
 	public override string ToString()
 	{
 		return $"{Id}: {FirstName} {LastName} ({Gender}, {Age} years)";

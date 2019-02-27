@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MyLinkedList<T> : IEnumerable<T> where T : IComparable<T>
+public class MyLinkedList<T> : IEnumerable<T> where T : IComparable
 {
 	private class Node
 	{
@@ -134,25 +134,30 @@ public class MyLinkedList<T> : IEnumerable<T> where T : IComparable<T>
 
 	public void Sort()
 	{
-		Node actualnode = head;
 
-		//bool swap = false;
-
-		for(int i = 0; i < Count -1; i++)
+		for (int i = 0; i < Count -1; i++)
 		{
-			for (int k = 0; k < Count; k++)
+			Node actualnode = head;
+
+			for (int k = 0; k < Count - i - 1; k++)
 			{
 				if (actualnode.Data.CompareTo(actualnode.Next.Data) > 0)
 				{
-					Node Temp = actualnode.Next;
-					Temp.Next = actualnode.Next;
-					head.Next = Temp.Next;
-					Temp.Next.Next = actualnode;
-					head = Temp;
+					
 				}
 				actualnode = actualnode.Next;
 			}
 		}
+	}
+
+	private void Swap(Node pointer)
+	{
+		// Data temp = pointer.Data;
+		//pointer.Data = pointer.Next.Data;
+		//pointer.Next.Data = temp;
+		T temp = pointer.Data;
+		pointer.Data = pointer.Next.Data;
+		pointer.Next.Data = temp;
 	}
 
 	public IEnumerator<T> GetEnumerator()
